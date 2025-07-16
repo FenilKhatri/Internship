@@ -88,13 +88,11 @@ function Selection() {
     event.preventDefault();
     setError('');
 
-    // Validate Gujarati
-    if (language === 'gu' && region !== 'in') {
-      setError('Gujarati language is only supported for India. Please choose India or change the language.');
-      return;
-    }
+    // Validate all selections
 
-    const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}&timezone=Asia/Kolkata`;
+    // const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=en&category=${category}&timezone=Asia/Kolkata` || `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}&timezone=Asia/Kolkata`;
+
+    const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}`;
 
     try {
       const data = await (await fetch(URL)).json();
@@ -104,6 +102,7 @@ function Selection() {
       setNewsList([]);
     }
   };
+
 
   return (
     <>
