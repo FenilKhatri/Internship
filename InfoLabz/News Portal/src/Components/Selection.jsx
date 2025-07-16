@@ -89,10 +89,12 @@ function Selection() {
     setError('');
 
     // Validate all selections
+    if (!region || !category || !language) {
+      setError('Please select country, category, and language.');
+      return;
+    }
 
-    // const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=en&category=${category}&timezone=Asia/Kolkata` || `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}&timezone=Asia/Kolkata`;
-
-    const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}`;
+    const URL = `https://newsdata.io/api/1/latest?apikey=pub_c3cfab43fbb34c0b812930fc3ccea599&country=${region}&language=${language}&category=${category}&timezone=Asia/Kolkata`;
 
     try {
       const data = await (await fetch(URL)).json();
