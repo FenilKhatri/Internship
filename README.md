@@ -18,3 +18,8 @@
 
 ### (iii) AI_Steel_Plate_Fault_Detector
   A web-based tool that uses a machine learning model to detect seven types of faults in steel plates. Built with Flask and deployed on Render, the app supports real-time multi-label classification through manual input, CSV upload, or random sample loading. The frontend is designed using Tailwind CSS, while the backend leverages Scikit-learn for predictions.
+
+## 3. InfoLabz
+
+### (i) News Portal
+  This is my **first React.js project** — a dynamic News Portal that fetches and displays real-time business news based on the selected country. The project uses the [NewsData.io API](https://newsdata.io/) for fetching news headlines and integrates **Bootstrap 5** for a responsive UI.
